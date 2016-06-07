@@ -1,5 +1,38 @@
+# GRAB THOMAS AND CECILE (IF SHE'S HERE)
+# AND LETS KILL THIS PUPPY
+
+
+
+
 Rails.application.routes.draw do
+  devise_for :users
   root to: 'pages#home'
+
+  resources :entertainers, only: [:index, :show] do
+    resources :bookings, only: [:create]
+  end
+
+  namespace :host do
+    resource :account, only: [:edit, :update]
+
+    resources :bookings, only: [:index, :edit, :update] do
+      member do
+        patch :cancel
+      end
+    end
+  end
+
+  namespace :entertainer do
+    resource :profile, only: [:show, :edit, :update]
+
+    resources :requests, only: [:index] do
+      member do
+        patch 'accept'
+        patch 'decline'
+      end
+    end
+  end
+
 
   # this is where routes go
 
