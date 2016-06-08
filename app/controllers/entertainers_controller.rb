@@ -5,7 +5,7 @@ class EntertainersController < ApplicationController
   end
 
   def show
-    @entertainer = User.find_by(entertainer_name: params[:entertainer_name])
+    @entertainer = User.find(params[:id])
     if @entertainer.nil?
       redirect_to action: :index
     end
