@@ -1,8 +1,13 @@
 class EntertainersController < ApplicationController
   def index
-    @entertainers= Entertainer.all
+    @entertainers = User.all
   end
+
   def show
-     @entertainer = Entertainer.find
+    @entertainer = User.find(params[:id])
+    if @entertainer.nil?
+      redirect_to action: :index
+    end
   end
+
 end

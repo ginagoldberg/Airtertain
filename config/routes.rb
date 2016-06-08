@@ -1,11 +1,7 @@
-# GRAB THOMAS AND CECILE (IF SHE'S HERE)
-# AND LETS KILL THIS PUPPY
-
-
-
-
 Rails.application.routes.draw do
-  devise_for :users
+
+devise_for :users, :controllers => { registrations: 'registrations' }
+
   root to: 'pages#home'
   resources :entertainers, only: [:index, :show] do
     resources :bookings, only: [:create]

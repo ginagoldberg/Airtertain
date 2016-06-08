@@ -1,0 +1,4 @@
+<h1>Entertainer Overview</h1>
+<% @entertainers.each do |entertainer| %>
+  <%= link_to entertainer.first_name, entertainer_path(entertainer) %>
+<%end%>
