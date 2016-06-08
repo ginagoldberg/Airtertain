@@ -1,7 +1,6 @@
 class Entertainer::ProfilesController < ApplicationController
   def show
     @entertainer = Entertainer.find()
-
   end
 
   def edit
