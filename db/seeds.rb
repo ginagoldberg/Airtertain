@@ -6,9 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.all.destroy
-
-Booking.all.destroy
+# User.destroy_all
+# Booking.destroy_all
 
 u1 = User.new(first_name: "Joe", last_name:"Doe", entertainer_name: "JDD")
 u2 = User.new(first_name: "Jee", last_name:"Dee", entertainer_name: "JDee")
