@@ -4,11 +4,21 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+
+    <%= f.collection_radio_buttons :entertainer, [[true, 'I am an Entertainer'], [false, 'I am a Host']], :first, :last, boolean_style: :inline, default: false %>
+    <%= f.input :first_name, required: true %>
+    <%= f.input :last_name, required: true %>
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
-    <%= f.input :first_name, required: true %>
-    <%= f.input :last_name, required: true %>
+  </div>
+
+  <div id="entertainer-fields", style="display: none;">
+    <%= f.input :entertainer_name, required: true %>
+    <%= f.input :biography, as: :text, input_html: {rows: 5, cols: 10} %>
+    <%= f.input :price, required: true %>
+    <%= f.input :travel_range, as: :integer, required: true %>
+    <%= f.collection_radio_buttons :available, [[true, 'Set not available yourself'] ,[false, 'Set available yourself']], :first, :last, as: :boolean, boolean_style: :inline %>
   </div>
 
   <div class="form-actions">
