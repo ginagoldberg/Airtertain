@@ -10,5 +10,7 @@ class Host::AccountsController < ApplicationController
    redirect_to host_path(@host)
  end
 
+end
+
 #edit host account (GET)
 #update host account (PATCH and PUT)
