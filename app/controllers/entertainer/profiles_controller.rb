@@ -20,7 +20,7 @@ end
 private
 
 def set_entertainer
-  @entertainer = Entertainer.find(params[:id])
+  @entertainer = User.find(params[:id])
 end
 
 def entertainer_params
