@@ -3,6 +3,8 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.entertainer_id = params[:entertainer_id]
     @booking.user_id = current_user.id
+
+    @booking.status = "pending"
     @booking.save!
     redirect_to host_bookings_path
   end
