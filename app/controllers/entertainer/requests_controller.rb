@@ -1,7 +1,11 @@
 class Entertainer::RequestsController < ApplicationController
 
   def index
-    @requests = current_user.bookings
+    @requests = Booking.where(entertainer_id: current_user.id)
+    @pending_requests = @requests.where(status: "pending")
+    @accepted_requests = @requests.where(status: "accepted")
+    @declined_requests = @requests.where(status: "declined")
+
   end
 
   def accept
