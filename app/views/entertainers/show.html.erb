@@ -1,3 +1,16 @@
 <h2><%= @entertainer.email %></h2>
 <h2><%= @entertainer.entertainer %></h2>
 
+<%=  simple_form_for [@entertainer, @booking], url: entertainer_bookings_path do |f| %>
+<%= f.input :title %>
+<%= f.input :description %>
+<%= f.input :start_datetime %>
+<%= f.input :end_datetime%>
+<%= f.input :address_street %>
+<%= f.input :address_num %>
+<%= f.input :address_city %>
+<%= f.input :address_zip%>
+
+<% end %>
+
+

@@ -14,6 +14,7 @@ class EntertainersController < ApplicationController
 
   def show
     @entertainer = User.find(params[:id])
+    @booking = Booking.new
     if @entertainer.nil?
       redirect_to action: :index
     end
