@@ -1,15 +1,20 @@
 
 <div class="navbar-main">
   <div class="logo">
-    <%= link_to "Welcome to Airtertain","index.html"%></li>
+    <%= link_to "Welcome to Airtertain","home.home.html.erb"%></li>
   </div>
 
   <div class="navbar-right">
     <ul class="list-inline">
-      <li><%= link_to "Home","acceuil.html"%></li>
-      <li><%= link_to "Search an artist","Contact.html"%></li>
-      <li><%= link_to "About us","Approach.html"%></li>
+      <li><%= link_to "Home","home.html"%></li>
+      <li><%= link_to "Search an artist","saa.html"%></li>
+      <li><%= link_to "About us","aboutus.html"%></li>
+      <li><%= link_to "Log in","sign_in"%></li>
+      <% if user_signed_in?%>
+      <li><%= link_to "Sign out",destroy_user_session_path, method: :delete%></li>
+      <% else %>
       <li><%= link_to "Sign in",new_user_registration_path%></li>
+      <% end %>
     </ul>
   </div>
 </div>
