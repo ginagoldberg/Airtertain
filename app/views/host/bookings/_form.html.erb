@@ -1,0 +1,18 @@
+<%= simple_form_for @booking do |f| %>
+
+<div class="form-inputs">
+  <%= f.input :title, required: true %>
+  <%= f.input :description, required: true, as: :text, input_html: {rows: 5, cols: 10} %>
+  <%= f.input :start_datetime, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, discard_day: true, order: [:month, :year] %>
+  <%= f.input :end_datetime, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year - 12, discard_day: true, order: [:month, :year] %>
+  <%= f.input :address_street, required: true %>
+  <%= f.input :address_city, required: true %>
+  <%= f.input :address_zip, required: true %>
+  <%= f.input :address_num, required: true %>
+</div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Make Booking!" %>
+  </div>
+<% end %>
+
