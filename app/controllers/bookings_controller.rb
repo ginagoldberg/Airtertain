@@ -4,8 +4,7 @@ class BookingsController < ApplicationController
     @booking.entertainer_id = params[:entertainer_id]
     @booking.user_id = current_user.id
     @booking.save!
-    redirect_to root_path
-    # host_bookings_path
+    redirect_to host_bookings_path
   end
 
   private
