@@ -1,6 +1,15 @@
 <div class="banner" style="position: absolute; margin-bottom: 75px; background: linear-gradient(-225deg, rgba(0,1,1,0) 0%, rgba(0,1,1,0) 50%), url('<%=image_path 'Picture1.jpg'%>');">
       <div class="banner-content">
-<%= link_to "This is where you discover more than just music", class: "button", style: "text-decoration: none" %>
+<h2> <%= link_to "This is where you discover more than just music", class: "button", style: "text-decoration: none" %> </h2>
+<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+
+<div class="searchbar">
+<%= form_tag(entertainers_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Find an entertainer" %>
+  <%= submit_tag "Search" %>
+<% end %>
+</div>
+
 
     </div>
   </div>

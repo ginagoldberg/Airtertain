@@ -7,4 +7,9 @@ class User < ActiveRecord::Base
   has_many :reviews, through: :bookings
 
 
+
+def self.search(search)
+  where("users.entertainer_name LIKE ?", "#{search}")
+end
+
 end

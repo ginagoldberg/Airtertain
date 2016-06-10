@@ -1,0 +1,16 @@
+<h2>These are your incoming requests</h2>
+<h3>Pending </h3>
+<% @pending_requests.each do |request| %>
+<%= request.title %>
+<%= link_to "Accept",  accept_entertainer_request_path(request), method: :patch %>
+<%= link_to "Decline",  decline_entertainer_request_path(request), method: :patch %>
+  <% end %>
+<h3>Accepted</h3>
+<% @accepted_requests.each do |request| %>
+<%= request.title %>
+  <% end %>
+
+<h3>Declined</h3>
+<% @declined_requests.each do |request| %>
+<%= request.title %>
+  <% end %>

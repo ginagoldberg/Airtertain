@@ -16,5 +16,5 @@ u3 = User.create(first_name: "Bee", last_name:"Dee", email: "31@31.com", passwor
 u4 = User.create(first_name: "Cee", last_name:"Dee", email: "41@41.com", password: "444111", )
 
 
-b1 = Booking.create(title: "Clown Party", description: "Bubbles and clowns all day", user_id: User.all.sample.id, entertainer_id: User.all.sample.id)
-b2 = Booking.create(title: "Stripper Party", description: "Bubbles and strippers all day", user_id: User.all.sample.id, entertainer_id: User.all.sample.id)
+b1 = Booking.create(title: "Clown Party", description: "Bubbles and clowns all day", user_id: User.all.sample.id, entertainer_id: User.all.sample.id, status: "pending")
+b2 = Booking.create(title: "Stripper Party", description: "Bubbles and strippers all day", user_id: User.all.sample.id, entertainer_id: User.all.sample.id, status: "pending")
