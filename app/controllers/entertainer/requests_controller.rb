@@ -27,4 +27,5 @@ class Entertainer::RequestsController < ApplicationController
 
     redirect_to  entertainer_requests_path
   end
+
 end

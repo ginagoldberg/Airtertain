@@ -4,6 +4,10 @@ class Host::BookingsController < ApplicationController
     @bookings = Booking.all
   end
 
+  def create
+    @booking = Booking.new(booking_params)
+  end
+
   def cancel
     @booking = Booking.find(params[:id])
     @booking.update(status: "canceled")

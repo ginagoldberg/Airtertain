@@ -7,16 +7,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 75px;
   h1 {
     color: grey;
     text-decoration: none;
   }
   a {
-    color:white;
+    color:black;
+    font-size: 38px;
     &:hover {
       color:grey;
     }
   }
+}
+
+.banner-content {
+  margin-bottom: 75px;
 }
 
 .banner2 {
@@ -32,7 +38,7 @@
     font-size:30px;
   }
   p2{
-        color:black;
+        color:grey;
     font-family: "AppleSDGothicNeo-thin", sans-serif;
     font-size: 48px;
     align-items: center;

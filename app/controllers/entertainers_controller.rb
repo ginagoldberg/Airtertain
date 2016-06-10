@@ -13,6 +13,7 @@ class EntertainersController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     @entertainer = User.find(params[:id])
     @booking = Booking.new
     if @entertainer.nil?
