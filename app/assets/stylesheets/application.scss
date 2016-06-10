@@ -13,3 +13,11 @@
 @import "components/index";
 @import "pages/index";
 @import "vendor/index";
+
+.flex-item {
+  display: flex;
+  justify-content: space-between;
+  p {
+    padding: 0;
+  }
+}
