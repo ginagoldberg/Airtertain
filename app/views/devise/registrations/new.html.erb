@@ -1,25 +1,36 @@
-<h2>Sign up</h2>
-
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 <div class="container-fluid">
   <div class="row">
-  <div class="col-md-4 col-md-offset-4 signupf">
+  <div class="col-md-4 col-md-offset-4">
+  <h2>Sign up</h2>
   <div class="form-inputs">
 
     <%= f.collection_radio_buttons :entertainer, [[true, 'I am an Entertainer'], [false, 'I am a Host']], :first, :last, boolean_style: :inline, required: true %>
     <%= f.input :first_name, required: true %>
     <%= f.input :last_name, required: true %>
     <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <div class="flex-item">
+      <%= f.label :password %>
+      <p> 6 characters minimum </p>
+    </div>
+    <%= f.input :password, label: false, required: true %>
     <%= f.input :password_confirmation, required: true %>
   </div>
 
   <div id="entertainer-fields", style="display: none;">
     <%= f.input :entertainer_name, required: true %>
     <%= f.input :biography, as: :text, input_html: {rows: 5, cols: 10} %>
-    <%= f.input :price, required: true, hint: "€" %>
-    <%= f.input :travel_range, collection: [5, 10, 15, 20, 25], required: true, hint: "Range in KM" %>
+      <div class="flex-item">
+      <%= f.label :price %>
+      <p> € </p>
+    </div>
+    <%= f.input :price, label: false, required: true %>
+      <div class="flex-item">
+      <%= f.label :travel_range %>
+      <p> Range in KM </p>
+    </div>
+    <%= f.input :travel_range, label: false, collection: [5, 10, 15, 20, 25], required: true %>
   </div>
 
   <div class="form-actions">
